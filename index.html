@@ -5,57 +5,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohamed Samy | Full Stack .NET Developer</title>
-  <meta name="description"
-    content="Bilingual portfolio for Mohamed Samy Mohamed Nasr, a Full Stack .NET Developer based in Cairo, Egypt." />
+  <meta name="description" content="Portfolio for Mohamed Samy, a Full Stack .NET Developer based in Cairo, Egypt." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
   <div class="page-shell">
+    <!-- Nav Bar -->
     <header class="topbar">
-      <a class="brand" href="#home">MS</a>
+      <a class="brand" href="#home"></a>
       <nav class="nav">
-        <a data-i18n="navAbout" href="#about">About</a>
-        <a data-i18n="navSkills" href="#skills">Skills</a>
-        <a data-i18n="navJourney" href="#journey">Journey</a>
-        <a data-i18n="navProjects" href="#projects">Projects</a>
-        <a data-i18n="navContact" href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="topbar-actions">
-        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">
-          العربية
-        </button>
-      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <main>
       <section class="hero section" id="home">
         <div class="hero-copy">
-          <span class="eyebrow" data-i18n="eyebrow">
+          <span class="eyebrow">
             Full Stack .NET Developer
           </span>
-          <h1 data-i18n="heroName">Mohamed Samy</h1>
-          <p class="hero-role" data-i18n="heroRole">Full Stack .NET</p>
-          <p class="hero-summary" data-i18n="heroSummary">
+          <h1>Mohamed Samy</h1>
+          <p class="hero-role">Full Stack .NET</p>
+          <p class="hero-summary">
             Aspiring Full Stack .NET Developer with a solid foundation in web
             technologies, C#, SQL Server, and a growing focus on ASP.NET
             Core, scalable architecture, and secure application development.
           </p>
 
           <div class="hero-meta">
-            <span class="meta-pill" data-i18n="metaLocation">Cairo, Egypt</span>
-            <span class="meta-pill" data-i18n="metaFocus">ASP.NET Core MVC & Entity Framework</span>
-            <span class="meta-pill" data-i18n="metaLeadership">Backend-Focused Web Development</span>
+            <span class="meta-pill">Cairo, Egypt</span>
+            <span class="meta-pill">ASP.NET Core MVC & Entity Framework</span>
+            <span class="meta-pill">Backend-Focused Web Development</span>
           </div>
 
           <div class="hero-actions">
-            <a class="button primary" href="#contact" data-i18n="ctaContact">Let's Connect</a>
-            <a class="button secondary" href="#projects" data-i18n="ctaProjects">
+            <a class="button primary" href="#contact">Let's Connect</a>
+            <a class="button secondary" href="#projects">
               View Project Space
             </a>
           </div>
@@ -68,8 +65,8 @@
             <div class="portrait-glow portrait-glow-b"></div>
 
             <div class="portrait-card portrait-card-top">
-              <span data-i18n="statEducationLabel">Education</span>
-              <strong data-i18n="statEducationValue">2024 - 2028 at HITU</strong>
+              <span>Education</span>
+              <strong>2024 - 2028 at HITU</strong>
             </div>
 
             <div class="portrait-stage">
@@ -80,13 +77,13 @@
             </div>
 
             <div class="portrait-card portrait-card-bottom">
-              <span data-i18n="statTrackLabel">Current Track</span>
-              <strong data-i18n="statTrackValue">Full Stack .NET at DEPI</strong>
+              <span>Current Track</span>
+              <strong>Full Stack .NET at DEPI</strong>
             </div>
 
             <div class="portrait-card portrait-card-side">
-              <span data-i18n="statRoleLabel">Focus</span>
-              <strong data-i18n="statRoleValue">Backend Web Apps with MVC</strong>
+              <span>Focus</span>
+              <strong>Backend Web Apps with MVC</strong>
             </div>
           </div>
         </div>
@@ -94,14 +91,14 @@
 
       <section class="section" id="about">
         <div class="section-heading">
-          <span class="section-kicker" data-i18n="aboutKicker">Profile</span>
-          <h2 data-i18n="aboutTitle">A grounded start with strong momentum.</h2>
+          <span class="section-kicker">Profile</span>
+          <h2>A grounded start with strong momentum.</h2>
         </div>
 
         <div class="about-grid">
           <article class="card feature-card">
-            <h3 data-i18n="aboutCardOneTitle">Professional Summary</h3>
-            <p data-i18n="aboutCardOneText">
+            <h3>Professional Summary</h3>
+            <p>
               Mohamed combines front-end fundamentals with C# and SQL Server,
               while actively deepening his knowledge in OOP and ASP.NET Core
               to build maintainable and secure web applications.
@@ -109,8 +106,8 @@
           </article>
 
           <article class="card feature-card">
-            <h3 data-i18n="aboutCardTwoTitle">Technical Foundation</h3>
-            <p data-i18n="aboutCardTwoText">
+            <h3>Technical Foundation</h3>
+            <p>
               His background includes HTML, CSS, JavaScript, database design,
               cybersecurity exposure, and the discipline needed to think
               carefully about performance, structure, and system behavior.
@@ -118,8 +115,8 @@
           </article>
 
           <article class="card feature-card">
-            <h3 data-i18n="aboutCardThreeTitle">Leadership Edge</h3>
-            <p data-i18n="aboutCardThreeText">
+            <h3>Leadership Edge</h3>
+            <p>
               Through Enactus HITU, he has led project management work,
               coordinated teams, and developed strong communication,
               ownership, and collaboration habits.
@@ -130,38 +127,38 @@
 
       <section class="section" id="skills">
         <div class="section-heading">
-          <span class="section-kicker" data-i18n="skillsKicker">Capabilities</span>
-          <h2 data-i18n="skillsTitle">Skills built for practical web delivery.</h2>
+          <span class="section-kicker">Capabilities</span>
+          <h2>Skills built for practical web delivery.</h2>
         </div>
 
         <div class="skills-grid">
           <article class="card skill-card">
-            <h3 data-i18n="skillsFrontendTitle">Frontend</h3>
+            <h3>Frontend</h3>
             <ul>
               <li>HTML5</li>
               <li>CSS3</li>
               <li>JavaScript</li>
-              <li data-i18n="skillsFrontendNote">Responsive user interfaces</li>
+              <li>Responsive user interfaces</li>
             </ul>
           </article>
 
           <article class="card skill-card">
-            <h3 data-i18n="skillsBackendTitle">Backend</h3>
+            <h3>Backend</h3>
             <ul>
               <li>C#</li>
               <li>ASP.NET Core</li>
               <li>SQL Server</li>
-              <li data-i18n="skillsBackendNote">Database design fundamentals</li>
+              <li>Database design fundamentals</li>
             </ul>
           </article>
 
           <article class="card skill-card">
-            <h3 data-i18n="skillsStrengthsTitle">Strengths</h3>
+            <h3>Strengths</h3>
             <ul>
-              <li data-i18n="strengthOne">Object-Oriented Programming mindset</li>
-              <li data-i18n="strengthTwo">Cybersecurity awareness</li>
-              <li data-i18n="strengthThree">Team leadership and project coordination</li>
-              <li data-i18n="strengthFour">Communication and problem solving</li>
+              <li>Object-Oriented Programming mindset</li>
+              <li>Cybersecurity awareness</li>
+              <li>Team leadership and project coordination</li>
+              <li>Communication and problem solving</li>
             </ul>
           </article>
         </div>
@@ -169,14 +166,14 @@
 
       <section class="section" id="journey">
         <div class="section-heading">
-          <span class="section-kicker" data-i18n="journeyKicker">Journey</span>
-          <h2 data-i18n="journeyTitle">Education, learning, and leadership path.</h2>
+          <span class="section-kicker">Journey</span>
+          <h2>Education, learning, and leadership path.</h2>
         </div>
 
         <div class="journey-grid">
           <article class="card timeline-card">
-            <h3 data-i18n="educationTitle">Education</h3>
-            <p data-i18n="educationText">
+            <h3>Education</h3>
+            <p>
               Bachelor of IT and Cybersecurity at Helwan International
               Technological University, College of Industrial Technology and
               Energy, 2024 - 2028.
@@ -184,8 +181,8 @@
           </article>
 
           <article class="card timeline-card">
-            <h3 data-i18n="coursesTitle">Courses & Training</h3>
-            <p data-i18n="coursesText">
+            <h3>Courses & Training</h3>
+            <p>
               Full Stack .NET at DEPI, HTML5 and HTML/CSS courses, computer
               network fundamentals, and cybersecurity practical training with
               NTI and OMC.
@@ -193,8 +190,8 @@
           </article>
 
           <article class="card timeline-card">
-            <h3 data-i18n="leadershipTitle">Leadership</h3>
-            <p data-i18n="leadershipText">
+            <h3>Leadership</h3>
+            <p>
               Director of Project Management at Enactus HITU, after earlier
               contributing as a Project Management Member.
             </p>
@@ -204,30 +201,30 @@
 
       <section class="section" id="projects">
         <div class="section-heading">
-          <span class="section-kicker" data-i18n="projectsKicker">Projects</span>
-          <h2 data-i18n="projectsTitle">A polished section ready for your upcoming case studies.</h2>
+          <span class="section-kicker">Projects</span>
+          <h2>A polished section ready for your upcoming case studies.</h2>
         </div>
 
         <div class="projects-showcase">
           <article class="project-hero card">
-            <p class="placeholder-badge" data-i18n="placeholderBadge">Coming soon</p>
-            <h3 data-i18n="placeholderTitle">Your featured backend case study will live here.</h3>
-            <p data-i18n="placeholderText">
+            <p class="placeholder-badge">Coming soon</p>
+            <h3>Your featured backend case study will live here.</h3>
+            <p>
               This area is prepared for a full project story with business goal, architecture, tech stack, screenshots,
               and measurable results.
             </p>
             <div class="project-tags">
-              <span data-i18n="projectTagOne">ASP.NET Core MVC</span>
-              <span data-i18n="projectTagTwo">Entity Framework</span>
-              <span data-i18n="projectTagThree">SQL Server</span>
+              <span>ASP.NET Core MVC</span>
+              <span>Entity Framework</span>
+              <span>SQL Server</span>
             </div>
           </article>
 
           <div class="project-grid">
             <article class="project-card card">
               <span class="project-index">01</span>
-              <h3 data-i18n="projectCardOneTitle">Business Web Application</h3>
-              <p data-i18n="projectCardOneText">
+              <h3>Business Web Application</h3>
+              <p>
                 A future showcase slot for a structured web solution built with clean MVC architecture and
                 database-driven workflows.
               </p>
@@ -235,16 +232,16 @@
 
             <article class="project-card card">
               <span class="project-index">02</span>
-              <h3 data-i18n="projectCardTwoTitle">Admin or Dashboard System</h3>
-              <p data-i18n="projectCardTwoText">
+              <h3>Admin or Dashboard System</h3>
+              <p>
                 Prepared for a project focused on authentication, data management, and practical backend logic.
               </p>
             </article>
 
             <article class="project-card card">
               <span class="project-index">03</span>
-              <h3 data-i18n="projectCardThreeTitle">Full-Stack MVC Experience</h3>
-              <p data-i18n="projectCardThreeText">
+              <h3>Full-Stack MVC Experience</h3>
+              <p>
                 Reserved for a case study that connects polished UI with solid backend structure and scalable database
                 design.
               </p>
@@ -256,19 +253,17 @@
       <section class="section contact-section" id="contact">
         <div class="contact-card">
           <div class="contact-copy">
-            <span class="section-kicker" data-i18n="contactKicker">Contact</span>
-            <h2 data-i18n="contactTitle">Open to internships, collaboration, and new opportunities.</h2>
-            <p class="contact-text" data-i18n="contactText">
+            <span class="section-kicker">Contact</span>
+            <h2>Open to internships, collaboration, and new opportunities.</h2>
+            <p class="contact-text">
               If you want to discuss an internship, freelance collaboration, or a future project, these are the best
               ways to reach me.
             </p>
             <div class="contact-actions">
-              <a class="button primary" href="./assets/Mohamed-Samy-CV.pdf" download="Mohamed-Samy-CV.pdf"
-                data-i18n="downloadCv">
+              <a class="button primary" href="./assets/Mohamed-Samy-CV.pdf" download="Mohamed-Samy-CV.pdf">
                 Download CV
               </a>
-              <a class="button secondary" href="https://wa.me/201551544111" target="_blank" rel="noreferrer"
-                data-i18n="contactWhatsappCta">
+              <a class="button secondary" href="https://wa.me/201551544111" target="_blank" rel="noreferrer">
                 WhatsApp
               </a>
             </div>
@@ -283,7 +278,7 @@
                 </svg>
               </span>
               <span class="contact-content">
-                <span class="contact-label" data-i18n="contactEmailLabel">Email</span>
+                <span class="contact-label">Email</span>
                 <span class="contact-value">mohamedsamynasr360@gmail.com</span>
               </span>
             </a>
@@ -296,7 +291,7 @@
                 </svg>
               </span>
               <span class="contact-content">
-                <span class="contact-label" data-i18n="contactPhoneLabel">Phone</span>
+                <span class="contact-label">Phone</span>
                 <span class="contact-value">01551544111</span>
               </span>
             </a>
@@ -310,7 +305,7 @@
                 </svg>
               </span>
               <span class="contact-content">
-                <span class="contact-label" data-i18n="contactWhatsappLabel">WhatsApp</span>
+                <span class="contact-label">WhatsApp</span>
                 <span class="contact-value">Chat on WhatsApp</span>
               </span>
             </a>
@@ -323,7 +318,7 @@
                 </svg>
               </span>
               <span class="contact-content">
-                <span class="contact-label" data-i18n="contactGithubLabel">GitHub</span>
+                <span class="contact-label">GitHub</span>
                 <span class="contact-value">github.com/M-Samyhub</span>
               </span>
             </a>
@@ -338,7 +333,7 @@
                 </svg>
               </span>
               <span class="contact-content">
-                <span class="contact-label" data-i18n="contactLinkedinLabel">LinkedIn</span>
+                <span class="contact-label">LinkedIn</span>
                 <span class="contact-value">linkedin.com/in/mohamed-samy-ms</span>
               </span>
             </a>

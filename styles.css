@@ -38,10 +38,6 @@ body {
   overflow-x: hidden;
 }
 
-html[lang="ar"] body {
-  font-family: "Cairo", sans-serif;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -73,56 +69,132 @@ canvas {
   pointer-events: none;
 }
 
+/* ── Topbar ── */
 .topbar {
   position: sticky;
-  top: 16px;
+  top: 14px;
   z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 16px 20px;
+  gap: 16px;
+  padding: 10px 10px 10px 14px;
   margin-top: 18px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  box-shadow: 0 14px 40px rgba(15, 34, 48, 0.08);
+  background: rgba(248, 245, 239, 0.82);
+  backdrop-filter: blur(22px) saturate(1.6);
+  -webkit-backdrop-filter: blur(22px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.9) inset,
+    0 16px 44px rgba(15, 34, 48, 0.09),
+    0 1px 0 rgba(15, 34, 48, 0.04);
   border-radius: 999px;
+  transition: background 300ms ease, box-shadow 300ms ease;
+}
+
+.topbar.scrolled {
+  background: rgba(248, 245, 239, 0.95);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.9) inset,
+    0 20px 56px rgba(15, 34, 48, 0.13);
 }
 
 .brand {
-  width: 52px;
-  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px 0 4px;
+  height: 48px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
+  color: white;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(15, 93, 125, 0.28);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.brand::before {
+  content: "MS";
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
-  color: white;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  font-size: 0.92rem;
+  flex-shrink: 0;
 }
 
+.brand:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(15, 93, 125, 0.32);
+}
+
+/* Desktop nav */
 .nav {
   display: flex;
   align-items: center;
-  gap: 24px;
-  color: var(--muted);
-  font-size: 0.96rem;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(15, 93, 125, 0.06);
+  border: 1px solid rgba(15, 93, 125, 0.08);
 }
 
-.nav a:hover,
+.nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: color 180ms ease, background 180ms ease;
+  white-space: nowrap;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary);
+  transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav a:hover {
+  color: var(--primary-deep);
+  background: rgba(255,255,255,0.72);
+}
+
+.nav a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav a.active {
+  color: var(--primary-deep);
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 8px rgba(15, 34, 48, 0.07);
+}
+
+.nav a.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
 .contact-item:hover {
   color: var(--primary);
 }
 
-.topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.lang-toggle,
 .button {
   border: 0;
   border-radius: 999px;
@@ -131,29 +203,70 @@ canvas {
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-.lang-toggle,
 .button.secondary {
   padding: 12px 18px;
   background: rgba(15, 93, 125, 0.08);
   color: var(--primary-deep);
 }
 
-.lang-toggle:hover,
 .button:hover {
   transform: translateY(-2px);
 }
 
-.section {
-  padding: 72px 0 0;
+/* Hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
+.nav-hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary-deep);
+  transition: transform 280ms ease, opacity 200ms ease, width 200ms ease;
+  transform-origin: center;
+}
+
+.nav-hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.nav-hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 0 60px;
+}
+
+/* Hero already uses grid layout, keep it */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
   gap: 40px;
   align-items: center;
   padding-top: 52px;
-  min-height: calc(100vh - 130px);
+  min-height: 100vh;
 }
 
 .hero-copy h1 {
@@ -596,27 +709,6 @@ canvas {
   overflow-wrap: anywhere;
 }
 
-html[dir="rtl"] .topbar,
-html[dir="rtl"] .hero,
-html[dir="rtl"] .contact-card {
-  direction: rtl;
-}
-
-html[dir="rtl"] .portrait-card-top {
-  left: 22px;
-  right: auto;
-}
-
-html[dir="rtl"] .portrait-card-bottom {
-  right: 22px;
-  left: auto;
-}
-
-html[dir="rtl"] .portrait-card-side {
-  left: 18px;
-  right: auto;
-}
-
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
@@ -632,6 +724,11 @@ html[dir="rtl"] .portrait-card-side {
 }
 
 @media (max-width: 1080px) {
+  .section {
+    min-height: auto;
+    padding: 80px 0 40px;
+  }
+
   .hero,
   .about-grid,
   .skills-grid,
@@ -639,6 +736,12 @@ html[dir="rtl"] .portrait-card-side {
   .contact-card,
   .projects-showcase {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .portrait-panel {
@@ -663,23 +766,69 @@ html[dir="rtl"] .portrait-card-side {
   }
 
   .topbar {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     border-radius: 28px;
-    padding: 16px;
+    padding: 8px 8px 8px 10px;
+    position: relative;
   }
 
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Nav collapses into dropdown */
   .nav {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 14px;
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+    padding: 8px;
+    background: rgba(248, 245, 239, 0.97);
+    backdrop-filter: blur(24px) saturate(1.6);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.9) inset,
+      0 20px 48px rgba(15, 34, 48, 0.14);
+    z-index: 30;
+    /* reset pill container styles from desktop */
+    background-clip: unset;
   }
 
-  .topbar-actions {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  .nav.nav-open {
+    display: flex;
+    animation: menuIn 220ms cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
+  }
+
+  @keyframes menuIn {
+    from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .nav a {
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    background: transparent;
+    transition: background 150ms ease, color 150ms ease;
+  }
+
+  /* hide the underline indicator on mobile */
+  .nav a::after { display: none; }
+
+  .nav a:hover,
+  .nav a.active {
+    background: rgba(15, 93, 125, 0.09);
+    color: var(--primary-deep);
+    box-shadow: none;
   }
 
   .hero-copy h1 {
@@ -710,7 +859,8 @@ html[dir="rtl"] .portrait-card-side {
 
 @media (max-width: 560px) {
   .section {
-    padding-top: 56px;
+    padding-top: 60px;
+    padding-bottom: 40px;
   }
 
   .hero {
@@ -725,7 +875,6 @@ html[dir="rtl"] .portrait-card-side {
   }
 
   .button,
-  .lang-toggle,
   .contact-actions .button {
     width: 100%;
   }

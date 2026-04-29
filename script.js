@@ -3,6 +3,11 @@ const hamburger = document.getElementById("nav-hamburger");
 const nav = document.querySelector(".nav");
 const topbar = document.querySelector(".topbar");
 
+function closeMobileNav() {
+  hamburger.setAttribute("aria-expanded", "false");
+  nav.classList.remove("nav-open");
+}
+
 hamburger.addEventListener("click", () => {
   const isOpen = hamburger.getAttribute("aria-expanded") === "true";
   hamburger.setAttribute("aria-expanded", String(!isOpen));
@@ -11,15 +16,19 @@ hamburger.addEventListener("click", () => {
 
 nav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    hamburger.setAttribute("aria-expanded", "false");
-    nav.classList.remove("nav-open");
+    closeMobileNav();
   });
 });
 
 document.addEventListener("click", (e) => {
   if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
-    hamburger.setAttribute("aria-expanded", "false");
-    nav.classList.remove("nav-open");
+    closeMobileNav();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 840) {
+    closeMobileNav();
   }
 });
 
@@ -53,7 +62,7 @@ updateNav();
 
 // ── Scroll-reveal animations ────────────────────────────────────────────────
 const revealNodes = document.querySelectorAll(
-  ".hero-copy > *, .portrait-panel, .section-heading, .feature-card, .skill-card, .timeline-card, .project-hero, .project-card, .contact-copy, .contact-item",
+  ".hero-copy > *, .portrait-panel, .section-heading, .feature-card, .skill-card, .service-card, .timeline-card, .project-hero, .project-card, .contact-copy, .contact-item",
 );
 
 function setupRevealAnimations() {
